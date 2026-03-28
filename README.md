@@ -1,4 +1,4 @@
-# Tiki-midtlivskrise 🌴🍹
+# Catos-midtlivskrisestasjon 🌴🍹
 
 En humoristisk og stilfull "mobile-first" nettside der man kan bestille sin fremtidige unge kjæreste. Designet er inspirert av Mid-Century Modern Tiki-lounger fra 50-tallet.
 

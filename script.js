@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Bygger opp innholdet til e-posten
-        const destinationEmail = "midtlivskrise@example.com";
-        const subject = encodeURIComponent(`Ny bestilling: Ung kjæreste til ${userName}`);
+        const subject = `Ny bestilling: Ung kjæreste til ${userName}`;
 
         let bodyText = `Aloha!\n\nJeg, ${userName}, kjenner krisen nærme seg og vil bestille følgende unge kjæreste(r):\n\n`;
 
@@ -34,12 +33,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         bodyText += `\nMahalo og god krise! 🌴`;
 
-        const body = encodeURIComponent(bodyText);
+        // Vis at noe skjer
+        const submitBtn = form.querySelector('.tiki-btn');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = 'Sender... 🥥';
+        submitBtn.disabled = true;
 
-        // Konstruerer en mailto-lenke for å åpne standard e-postklient
-        const mailtoLink = `mailto:${destinationEmail}?subject=${subject}&body=${body}`;
-
-        // Åpne e-postklienten
-        window.location.href = mailtoLink;
+        // Bruker Formspree for å sende dataene direkte til e-posten din i bakgrunnen
+        fetch("https://formspree.io/f/mykbklvp", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: subject,
+                Melding: bodyText
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert('Krisen din er bestilt og universet er varslet! 🌺🌴');
+                form.reset();
+            })
+            .catch(error => {
+                console.error(error);
+                alert('Oi, noe gikk galt! 📉 Prøv igjen.');
+            })
+            .finally(() => {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            });
     });
 });
