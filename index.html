@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiki-midtlivskrise 🌴🍹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="tiki-container">
+        <header class="tiki-header">
+            <h1>🌺 Midtlivskrise-lounge 🍹</h1>
+            <h2>Finn din unge kjæreste</h2>
+            <p>Aloha! På tide å bytte ut stasjonsvognen med en cabriolet og finne en partner med mer energi enn deg.</p>
+        </header>
+
+        <main class="tiki-main">
+            <form id="partnerForm" class="tiki-form">
+                <div class="form-group">
+                    <label for="userName">Ditt navn (og alder hvis du tør):</label>
+                    <input type="text" id="userName" name="userName" required placeholder="F.eks. Kjell, 52">
+                </div>
+
+                <div class="form-group">
+                    <label>Velg dine fremtidige ekskjærester:</label>
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="partner" value="L.A. – 22 år, tiktoker og matcha-entusiast">
+                            <span class="checkmark"></span>
+                            <div class="partner-info">
+                                <strong>L.A.</strong> <br>
+                                <span>22 år, tiktoker og matcha-entusiast</span>
+                            </div>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="partner" value="S.J. – 24 år, krypto-bro og «good vibes only»">
+                            <span class="checkmark"></span>
+                            <div class="partner-info">
+                                <strong>S.J.</strong> <br>
+                                <span>24 år, krypto-bro, «good vibes only»</span>
+                            </div>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="partner" value="M.K. – 21 år, DJ med egen krystallpodkast">
+                            <span class="checkmark"></span>
+                            <div class="partner-info">
+                                <strong>M.K.</strong> <br>
+                                <span>21 år, DJ, egen krystallpodkast</span>
+                            </div>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="partner" value="C.P. – 23 år, barista, elsker analog film">
+                            <span class="checkmark"></span>
+                            <div class="partner-info">
+                                <strong>C.P.</strong> <br>
+                                <span>23 år, barista, fotograferer kun analogt</span>
+                            </div>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="partner"
+                                value="T.H. – 27 år, grafisk designer, brenner for keramikk">
+                            <span class="checkmark"></span>
+                            <div class="partner-info">
+                                <strong>T.H.</strong> <br>
+                                <span>27 år, grafisk designer, brenner for keramikk</span>
+                            </div>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="partner"
+                                value="E.V. – 28 år, mellomleder, eier en surdeigsstarter">
+                            <span class="checkmark"></span>
+                            <div class="partner-info">
+                                <strong>E.V.</strong> <br>
+                                <span>28 år, mellomleder, eier en surdeigsstarter</span>
+                            </div>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="partner"
+                                value="I.S. – 30 år, yogalærer, driver med mikrodosering">
+                            <span class="checkmark"></span>
+                            <div class="partner-info">
+                                <strong>I.S.</strong> <br>
+                                <span>30 år, yogalærer, driver med mikrodosering</span>
+                            </div>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="partner"
+                                value="N.O. – 31 år, interiørarkitekt, drikker kun naturvin">
+                            <span class="checkmark"></span>
+                            <div class="partner-info">
+                                <strong>N.O.</strong> <br>
+                                <span>31 år, interiørarkitekt, drikker kun naturvin</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Beskjed til universet (valgfritt):</label>
+                    <textarea id="message" name="message" rows="3"
+                        placeholder="Jeg lover å lære meg hva 'slay' betyr..."></textarea>
+                </div>
+
+                <button type="submit" class="tiki-btn">Klar for krisen!</button>
+            </form>
+        </main>
+
+        <footer class="tiki-footer">
+            <p>🌺 Mahalo for at du aksepterer krisen! 🌺</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

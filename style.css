@@ -1,0 +1,289 @@
+/* Refined Mid-Century Tiki Lounge Theme */
+:root {
+    --bg-deep-teal: #0A2E2A;
+    --card-sand: #F9F6EE;
+    --text-primary: #1C2621;
+    --text-secondary: #4A5D52;
+    --accent-gold: #D4AF37;
+    --accent-coral: #E06D53;
+    --accent-leaf: #1F5444;
+
+    /* Abril Fatface gir en tung, tropisk/vintage hotell-vibe */
+    --font-heading: 'Abril Fatface', serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-deep-teal);
+    /* Genskaper stemningen av solnedgang og mørke blader i en lounge */
+    background-image:
+        radial-gradient(circle at 15% 25%, rgba(224, 109, 83, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(31, 84, 68, 0.4) 0%, transparent 70%);
+
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Hovedinnpakning */
+.tiki-container {
+    background-color: var(--card-sand);
+    border-radius: 12px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    /* En mer elegant "bambus/ramme"-effekt (Double border outline) */
+    border: 3px solid var(--accent-gold);
+    outline: 1px solid var(--accent-gold);
+    outline-offset: -8px;
+}
+
+/* Header */
+.tiki-header {
+    background-color: var(--card-sand);
+    text-align: center;
+    padding: 3.5rem 2rem 1.5rem;
+    position: relative;
+}
+
+/* Subtil korall-linje i stedet for mørk gull */
+.tiki-header::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-coral);
+    margin: 1.5rem auto 0;
+    border-radius: 2px;
+}
+
+.tiki-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--bg-deep-teal);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    /* Abril Fatface ser best ut i regular */
+    letter-spacing: 1px;
+}
+
+.tiki-header h2 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: var(--accent-coral);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.tiki-header p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Skjema */
+.tiki-main {
+    padding: 1.5rem 2.5rem 2.5rem;
+    flex-grow: 1;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--accent-leaf);
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid #D8D2C4;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: #B2AD9F;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-coral);
+    box-shadow: 0 0 0 3px rgba(224, 109, 83, 0.15);
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border: 1px solid #D8D2C4;
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.custom-checkbox:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Firkantede retro-sjekkbokser med avrundede hjørner */
+.checkmark {
+    min-width: 24px;
+    height: 24px;
+    background-color: #FFFFFF;
+    border: 2px solid #C4BEB1;
+    border-radius: 6px;
+    margin-right: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox input:checked~.checkmark {
+    background-color: var(--accent-coral);
+    border-color: var(--accent-coral);
+}
+
+.custom-checkbox input:checked~.checkmark::after {
+    content: "✕";
+    /* Retro kryss i stedet for ren hake */
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.custom-checkbox input:checked~.partner-info strong {
+    color: var(--accent-coral);
+}
+
+.custom-checkbox:has(input:checked) {
+    border-color: var(--accent-coral);
+    background-color: #FFFDF8;
+}
+
+.partner-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.partner-info strong {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--bg-deep-teal);
+    margin-bottom: 0.1rem;
+    transition: color 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.partner-info span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Innsendingsknapp */
+.tiki-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--accent-coral);
+    color: #FFF;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 0 #BD5139;
+    /* Gir en liten, retro 3D-sprett */
+}
+
+.tiki-btn:hover {
+    background-color: #E67A62;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #BD5139;
+}
+
+.tiki-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #BD5139;
+}
+
+/* Footer */
+.tiki-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #F1EDDF;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid #D8D2C4;
+}
+
+/* Tablet og Desktop tilpasninger */
+@media (min-width: 768px) {
+    body {
+        padding: 2rem;
+    }
+
+    .checkbox-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
+
+    .tiki-header h1 {
+        font-size: 3.2rem;
+    }
+}
