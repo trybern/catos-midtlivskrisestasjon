@@ -76,7 +76,7 @@ body {
 
 .tiki-header h1 {
     font-family: var(--font-heading);
-    font-size: 2.8rem;
+    font-size: 2rem;
     color: var(--bg-deep-teal);
     margin-bottom: 0.5rem;
     font-weight: 400;
@@ -286,6 +286,6 @@ textarea:focus {
     }
 
     .tiki-header h1 {
-        font-size: 3.2rem;
+        font-size: 2rem;
     }
 }
